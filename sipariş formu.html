@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Ürün Seçenekleri</title>
+<style>
+  .urun { margin-bottom: 10px; }
+  label { margin-right: 10px; }
+</style>
+</head>
+<body>
+    <header>
+        <!-- Logo ekleme -->
+        <img src="<a href="https://ibb.co/vYTspvH"><img src="https://i.ibb.co/L5cQmh8/LOGO-FOTOGRAM-3.png" alt="LOGO-FOTOGRAM-3" /></a>
+    </header>
+
+<!-- Ürünlerin Listesi -->
+<div id="urunler">
+  <!-- Konsept Ürünü -->
+  <div class="urun">
+    <label for="konsept">Konsept:</label>
+    <select id="konsept" name="konsept">
+      <option value="500">1 (500 TL)</option>
+      <option value="900">2 (900 TL)</option>
+      <option value="1350">3 (1350 TL)</option>
+      <option value="1800">4 (1800 TL)</option>
+      <option value="2200">5 (2200 TL)</option>
+      <option value="2500">6 (2500 TL)</option>
+    </select>
+  </div>
+
+  <!-- Kıyafet Ürünü -->
+  <div class="urun">
+    <label for="kiyafet">Kıyafet:</label>
+    <select id="kiyafet" name="kiyafet">
+      <option value="50">1 (50 TL)</option>
+      <option value="100">2 (100 TL)</option>
+      <option value="150">3 (150 TL)</option>
+      <option value="200">4 (200 TL)</option>
+      <option value="250">5 (250 TL)</option>
+      <option value="300">6 (300 TL)</option>
+    </select>
+  </div>
+
+  <!-- Albüm Ürünü -->
+  <div class="urun">
+    <label for="album">Albüm:</label>
+    <select id="album" name="album" onchange="fiyatGuncelle()">
+      <option value="0">YOK</option>
+      <option value="1000">20x50 5 yaprak (1000 TL)</option>
+      <option value="1500">20x50 10 yaprak (1500 TL)</option>
+      <option value="2000">25x60 5 yaprak (2000 TL)</option>
+      <option value="2500">25x60 10 yaprak (2500 TL)</option>
+      <option value="3000">30x60 10 yaprak (3000 TL)</option>
+      <option value="3500">30x76 10 yaprak (3500 TL)</option>
+    </select>
+  </div>
+
+  <!-- Aile Albümü Ürünü -->
+  <div class="urun">
+    <label for="aileAlbumu">Aile Albümü:</label>
+    <select id="aileAlbumu" name="aileAlbumu">
+      <option value="500">Evet (500 TL)</option>
+      <option value="0">Hayır</option>
+    </select>
+  </div>
+
+  <!-- Poster Ürünü -->
+  <div class="urun">
+    <label for="poster">Poster:</label>
+    <select id="poster" name="poster">
+      <option value="0">YOK</option>
+      <option value="350">50x70 (350 TL)</option>
+      <option value="650">70x100 (650 TL)</option>
+    </select>
+  </div>
+
+  <!-- Kanvas Tablo Ürünü -->
+  <div class="urun">
+    <label for="kanvasTablo">Kanvas Tablo:</label>
+    <select id="kanvasTablo" name="kanvasTablo">
+      <option value="0">YOK</option>
+      <option value="750">50x70 (750 TL)</option>
+      <option value="1500">70x100 (1500 TL)</option>
+    </select>
+  </div>
+
+  <!-- Dijital Teslim Ürünü -->
+  <div class="urun">
+    <label for="dijitalTeslim">Dijital Teslim:</label>
+    <select id="dijitalTeslim" name="dijitalTeslim">
+      <option value="1000">Evet (1000 TL)</option>
+      <option value="0">Hayır</option>
+    </select>
+  </div>
+
+  <!-- 10x15 Baskılı Fotoğraf Ürünü -->
+  <div class="urun">
+    <label for="baskiliFotograf10x15">10x15 Baskılı Fotoğraf:</label>
+    <select id="baskiliFotograf10x15" name="baskiliFotograf10x15">
+      <option value="0">0</option>
+      <option value="250">10 (250 TL)</option>
+      <option value="500">20 (500 TL)</option>
+      <option value="700">30 (700 TL)</option>
+      <option value="850">40 (850 TL)</option>
+      <option value="950">50 (950 TL)</option>
+      <option value="1050">60 (1050 TL)</option>
+      <option value="1100">70 (1100 TL)</option>
+      <option value="1150">80 (1150 TL)</option>
+      <option value="1175">90 (1175 TL)</option>
+      <option value="1200">100 (1200 TL)</option>
+    </select>
+  </div>
+
+  <!-- 15x21 Baskılı Fotoğraf Ürünü -->
+  <div class="urun">
+    <label for="baskiliFotograf15x21">15x21 Baskılı Fotoğraf:</label>
+    <select id="baskiliFotograf15x21" name="baskiliFotograf15x21">
+      <option value="0">0</option>
+      <option value="350">10 (350 TL)</option>
+      <option value="700">20 (700 TL)</option>
+      <option value="1000">30 (1000 TL)</option>
+      <option value="1200">40 (1200 TL)</option>
+      <option value="1400">50 (1400 TL)</option>
+      <option value="1600">60 (1600 TL)</option>
+      <option value="1700">70 (1700 TL)</option>
+      <option value="1800">80 (1800 TL)</option>
+      <option value="1900">90 (1900 TL)</option>
+      <option value="2000">100 (2000 TL)</option>
+    </select>
+  </div>
+
+  <!-- Baskılı Kupa Ürünü -->
+  <div class="urun">
+    <label for="baskiliKupa">Baskılı Kupa:</label>
+    <select id="baskiliKupa" name="baskiliKupa">
+      <option value="0">0</option>
+      <option value="150">1 (150 TL)</option>
+      <option value="300">2 (300 TL)</option>
+      <option value="450">3 (450 TL)</option>
+      <option value="500">4 (500 TL)</option>
+      <option value="600">5 (600 TL)</option>
+    </select>
+  </div>
+
+  <!-- Stüdyoda Çekim Ürünü -->
+  <div class="urun">
+    <label for="stüdyoCekim">Stüdyoda Çekim:</label>
+    <select id="stüdyoCekim" name="stüdyoCekim">
+      <option value="0">Hayır</option>
+      <option value="0">Evet</option>
+    </select>
+  </div>
+
+  <!-- Evde Çekim Ürünü -->
+  <div class="urun">
+    <label for="evdeCekim">Evde Çekim:</label>
+    <select id="evdeCekim" name="evdeCekim">
+      <option value="Hayır">Hayır</option>
+      <option value="Evet">Evet</option>
+    </select>
+  </div>
+
+  <!-- KM'ye Kadar Ürünü -->
+  <div class="urun" id="kmUrun" style="display: none;">
+    <label for="km">KM'ye Kadar:</label>
+    <select id="km" name="km">
+      <option value="0">30 KM (0 TL)</option>
+      <option value="600">50 KM (600 TL)</option>
+      <option value="1200">100 KM (1200 TL)</option>
+      <option value="2250">150 KM (2250 TL)</option>
+      <option value="3000">200 KM (3000 TL)</option>
+    </select>
+  </div>
+</div>
+
+
+
+<!-- Sıfırla Butonu -->
+<button onclick="sifirla()">SIFIRLA</button>
+
+<script>
+// Ürün seçeneklerinin fiyatlarını güncelleyen fonksiyon
+function fiyatGuncelle() {
+  var toplam = 0;
+  // Ürün fiyatlarını burada hesaplayın
+  document.getElementById('toplamFiyat').querySelector('span').textContent = toplam;
+}
+
+// Tüm seçimleri sıfırlayan fonksiyon
+function sifirla() {
+  var selects = document.querySelectorAll('select');
+  selects.forEach(function(select) {
+    select.selectedIndex = 0;
+  });
+  document.getElementById('kmUrun').style.display = 'none';
+  fiyatGuncelle();
+}
+
+// Sayfa yüklendiğinde çalışacak fonksiyon
+document.addEventListener('DOMContentLoaded', function() {
+  // "Evde Çekim" seçeneğini dinle
+  document.getElementById('evdeCekim').addEventListener('change', function() {
+    // Eğer "Evet" seçilirse
+    if (this.value === 'Evet') {
+      // "KM'ye Kadar" seçeneklerini göster
+      document.getElementById('kmUrun').style.display = 'block';
+    } else {
+      // Değilse, "KM'ye Kadar" seçeneklerini gizle
+      document.getElementById('kmUrun').style.display = 'none';
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // "Stüdyoda Çekim" ve "Evde Çekim" seçeneklerini al
+  var stüdyoCekim = document.getElementById('stüdyoCekim'); // Stüdyoda Çekim seçeneğinin id'si
+  var evdeCekim = document.getElementById('evdeCekim');
+
+  // "Stüdyoda Çekim" seçeneğini dinle
+  stüdyoCekim.addEventListener('change', function() {
+    // Eğer "Evet" seçilirse
+    if (this.value === 'Evet') {
+      // "Evde Çekim" seçeneğini "Hayır" yap
+      evdeCekim.value = 'Hayır';
+    }
+  });
+
+  // "Evde Çekim" seçeneğini dinle
+  evdeCekim.addEventListener('change', function() {
+    // Eğer "Hayır" seçilirse
+    if (this.value === 'Hayır') {
+      // "Stüdyoda Çekim" seçeneğini "Evet" yap
+      stüdyoCekim.value = 'Evet';
+    }
+  });
+});
+
+
+// Başlangıçta fiyatı sıfırla ve çekim kontrolünü ayarla
+sifirla();
+cekimKontrol();
+
+// Her seçim değiştiğinde fiyatı güncelle ve çekim kontrolünü yap
+document.getElementById('urunler').addEventListener('change', function(event) {
+  fiyatGuncelle();
+  cekimKontrol();
+});
+</script>
+</div>
+<button onclick="hesapla()">Toplam Tutarı Hesapla</button>
+<div id="totalPrice">Toplam Fiyat: 0₺</div>
+
+<script>
+    // Fiyatları hesaplamak için bir fonksiyon
+    function hesapla() {
+      var kiyafet = document.getElementById('kiyafet');
+      var fiyat = parseInt(kiyafet.value)+parseInt(konsept.value)+parseInt(album.value)+parseInt(aileAlbumu.value)+parseInt(poster.value)+parseInt(kanvasTablo.value)+parseInt(dijitalTeslim.value)+parseInt(baskiliFotograf10x15.value)+parseInt(baskiliFotograf15x21.value)+parseInt(baskiliKupa.value)+parseInt(km.value);
+      document.getElementById('totalPrice').innerHTML = 'Toplam Fiyat: ' + fiyat + '₺';
+    }
+  </script>
+
+</body>
+</html>
